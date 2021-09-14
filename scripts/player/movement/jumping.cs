@@ -5,7 +5,7 @@ using UnityEngine;
 public class jumping : MonoBehaviour
 {
     private Rigidbody2D rigidBody2D;
-    private float jumpStranght = 10f;
+    private float jumpStrength = 10f;
     private gravitySwitcher gravitySwitcher;
     private bool grounded = false;
     private bool additionalJump = true;
@@ -29,7 +29,7 @@ public class jumping : MonoBehaviour
         if(!grounded && additionalJump){
             additionalJump = false;
         }
-        rigidBody2D.AddForce(new Vector2(rigidBody2D.velocity.x, jumpStranght * gravitySwitcher.gravityDirection), ForceMode2D.Impulse);
+        rigidBody2D.AddForce(new Vector2(rigidBody2D.velocity.x, jumpStrength * gravitySwitcher.gravityDirection), ForceMode2D.Impulse);
     }
 
     void GroundedStateChange(bool state){
